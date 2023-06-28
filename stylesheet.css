@@ -1,0 +1,103 @@
+    body{
+    display: flex;
+    flex-direction: column;
+    width: 1000px;
+    margin: 0 auto;
+    background-image: url('background.jpg');     
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+header{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    background-color: grey;
+    justify-content: space-between;
+    padding: 25px;
+    
+}
+
+.aclass{
+    background-color: white;
+    height: 100px;
+    width: 100px;
+    padding: 20px;
+    color: black;
+}
+.test{
+    display: flex;
+    flex-direction: row;
+    
+}
+    
+
+.GamePicker{
+    justify-content: center;
+    background-color: white;
+    color: black;
+}
+main{
+    margin-top: 10px;
+    display: flex;
+    row-gap: row;
+    background-color: grey;
+    flex-direction: column;
+    height: 500px;
+    
+}
+.informatie{
+    
+    background-color:darkgrey ;
+    flex:1;
+    margin: 20px;
+    padding-left: 10px;
+}
+.title{
+    padding-left: 10px;
+    margin: 20px;
+    background-color:darkgrey ;
+    flex:2;
+    height: 250px;
+}
+
+
+.fotosection{
+    background-color: grey; 
+    padding: 10px;
+}
+
+.fotoclass{
+    padding: 20px;
+    height: 150px;
+    width: 200px ;
+    background-color: darkgray;
+
+}
+.systeemvereisten{
+    margin-top: 10px;
+    background-color: grey; 
+    height: 320px;
+    padding: 10px;
+
+}
+.systeemvereistendiv{
+    padding: 20px;
+    background-color:darkgrey ;
+}
+footer{
+    margin-top: 355px;
+    background-color: grey;
+    height: 240px;
+    width: 1000px;
+}
+.recenties{
+    padding: 20px;
+    width: 94%;
+    height: 170px;
+    margin: auto;
+    background-color: darkgrey;
+}
+a,p,h1,h2,h3{
+    font-family: sans-serif;
+}
