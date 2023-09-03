@@ -216,7 +216,8 @@ function showGames() {
 
   sortedGames.forEach(function(game, index) {
     var row = document.createElement("tr");
-    row.innerHTML = "<td>" + game.title + "</td><td>" + game.price + "</td><td>" + game.genre + "</td><td>" + game.rating + "</td><td><button class='addToCart' data-index='" + index + "'>Add to Cart</button></td>";
+    row.setAttribute("id", index);
+    row.innerHTML = "<td id='title"+index+"'>" + game.title + "</td><td id='price"+index+"'>" + game.price + "</td><td>" + game.genre + "</td><td>" + game.rating + "</td><td><button class='addToCart' data-index='" + index + "'>Add to Cart</button></td>";
     gamesTable.appendChild(row);
   });
 
@@ -268,24 +269,26 @@ function attachAddToCartListeners() {
 }
 
 function addToCart(index) {
-  var game = games[index];
-  cartItems.push(game);
+  var game = document.getElementById(index);
+  console.log(game.innerHTML);
+
   console.log("Game added to cart:", game);
-  updateCart();
+  updateCart(index);
 }
 
-function updateCart() {
+function updateCart(index) {
   var cartBody = document.getElementById("cartBody");
   var totalPriceElement = document.getElementById("totalPrice");
+  var title = document.getElementById('title'+index+'');
+  var price = document.getElementById('price'+index+'');
   cartBody.innerHTML = "";
 
   var totalPrice = 0;
-  cartItems.forEach(function(item) {
+
     var row = document.createElement("tr");
-    row.innerHTML = "<td>" + item.title + "</td><td>" + item.price + "</td>";
-    cartBody.appendChild(row);
-    totalPrice += item.price;
-  });
+    row.innerHTML = "<td>" + title.innerHTML + "</td><td>" + price.innerHTML + "</td>";
+    cartBody.append(row);
+    totalPrice += price.innerHTML;
 
   totalPriceElement.innerHTML = "Total Price: $" + totalPrice.toFixed(2);
 }
